@@ -4,11 +4,10 @@ import { cookies } from "next/headers"
 export function createServerClient() {
   const cookieStore = cookies()
 
-  // Your actual Supabase project credentials
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://ocismhcpgrnbcoxflsrl.supabase.co"
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://uqwzuerpfjgcxjiizouu.supabase.co"
   const supabaseAnonKey =
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9jaXNtaGNwZ3JuYmNveGZsc3JsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMwMDE1NTgsImV4cCI6MjA2ODU3NzU1OH0.TmgD1foaWshJttBBybB00n44HMz4i-J7PnukPW4IfEw"
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxd3p1ZXJwZmpnY3hqaWl6b3V1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjExNDQxNjksImV4cCI6MjA3NjcyMDAxNjl9.uUJnKX3lyorPJODjppJec-nI93yPEuhPJ5THwJTt4Ew"
 
   return createSupabaseServerClient(supabaseUrl, supabaseAnonKey, {
     cookies: {
