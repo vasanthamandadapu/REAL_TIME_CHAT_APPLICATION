@@ -3,7 +3,7 @@ import { createServerClient } from "../lib/supabase-server"
 
 export default async function HomePage() {
   try {
-    const supabase = createServerClient()
+    const supabase = await createServerClient()
 
     const {
       data: { session },
@@ -15,7 +15,9 @@ export default async function HomePage() {
       redirect("/login")
     }
   } catch (error) {
-    console.error("Error checking session:", error)
+    if (error instanceof Error && error.message !== "NEXT_REDIRECT") {
+      console.error("Error checking session:", error)
+    }
     redirect("/login")
   }
 }
